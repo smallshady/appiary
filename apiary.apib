@@ -1,80 +1,32 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
-
-# smallshady
-
-Polls is a simple API allowing consumers to view polls and vote in them.
-
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
+HOST: http://127.0.0.1:8000
+# Basic ACME Blog API
+Welcome to the **ACME Blog** API. This API provides access to the **ACME Blog** service.
+# Group Blog Posts
+## Posts [GET /api/post]
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+    + Body
+    
+            [
+                {
+                    "id": 1,
+                    "title": "foo title",
+                    "body": "bar body",
+                    "author": 1
+                }
             ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
+# Group Authors
+Resources in this groups are related to **ACME Blog** authors.
+## Authors [GET /api/author]
++ Response 200 (application/json)
 
     + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+    
+            [
+                {
+                    "id": 1,
+                    "name": "jhon",
+                    "email": "jhon@mail.com"
+                }
+            ]
