@@ -1,32 +1,51 @@
-FORMAT: 1A
-HOST: http://127.0.0.1:8000
-# Basic ACME Blog API
-Welcome to the **ACME Blog** API. This API provides access to the **ACME Blog** service.
-# Group Blog Posts
-## Posts [GET /api/post]
+FORMAT: X-1A
+
+# Machines API 
+
+The Example API for Dredd API Blueprint testing tool
+
+# Group Machines
+
+# Machines collection [/machines]
+
+## Create a Machine [POST]
++ Request (application/json)
+
+        {
+          "type": "bulldozer",
+          "name": "willy"
+        }
+
++ Response 202 (application/json)
+        
+        {
+          "message": "Accepted"
+        }
+
+## Retreive all Machines [GET]
+
 + Response 200 (application/json)
-    
-    + Body
-    
-            [
-                {
-                    "id": 1,
-                    "title": "foo title",
-                    "body": "bar body",
-                    "author": 1
-                }
-            ]
-# Group Authors
-Resources in this groups are related to **ACME Blog** authors.
-## Authors [GET /api/author]
+
+        [{
+            "_id": "52341870ed55224b15ff07ef",
+            "type": "bulldozer",
+            "name": "willy"
+        }]
+
+# Machine [/machines/{name}]
++ Parameters
+  + name (required,`willy`)
+
+
+## Retrieve a Machine [GET]
 + Response 200 (application/json)
-    
-    + Body
-    
-            [
-                {
-                    "id": 1,
-                    "name": "jhon",
-                    "email": "jhon@mail.com"
-                }
-            ]
+
+        {
+          "type": "bulldozer",
+          "name": "willy",
+          "_id": "5229c6e8e4b0bd7dbb07e29c"
+        }
+
+## Delete Message [DELETE]
+
++ Response 204
