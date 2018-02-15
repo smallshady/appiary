@@ -1,5 +1,15 @@
+sudo: false
+language: node_js
+node_js:
+  - "6"
+services:
+  - "mongodb"
+cache:
+  directories:
+    - "node_modules"
 before_install:
-  - npm install -g dredd@5.0.0
-
-after_success:
-    - dredd
+  - "npm -g install npm@latest"
+install:
+  - "npm install --no-optional"
+before_script:
+  - "npm info dredd version"
