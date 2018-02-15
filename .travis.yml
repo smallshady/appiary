@@ -1,5 +1,5 @@
 before_install:
-  - npm install -g dredd@x.x.x
+  - npm install -g dredd@5.0.0
 
 after_success:
     - dredd
