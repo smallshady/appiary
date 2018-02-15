@@ -1,6 +1,10 @@
+machine:
+  node:
+    version: "6"
 dependencies:
-  pre:
-    - npm install -g dredd@5.0.0
+  override:
+    - "npm -g install npm@latest"
+    - "npm install --no-optional"
 test:
   pre:
-    - dredd
+    - "npm info dredd version"
