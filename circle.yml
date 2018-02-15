@@ -3,8 +3,6 @@ machine:
     version: "6"
 dependencies:
   override:
-    - "npm -g install npm@latest"
-    - "npm install --no-optional"
     - "npm install -g dredd@latest"
 test:
   pre:
