@@ -8,3 +8,5 @@ dependencies:
 test:
   pre:
     - "npm info dredd version"
+  override:
+    - phpunit test/unit-tests # use PHPunit for testing
